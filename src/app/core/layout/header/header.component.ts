@@ -7,10 +7,9 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title =  environment.appName + ' hello world ;-)' ;
-  constructor() { }
+  title = environment.appName + ' hello world ;-)';
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }
