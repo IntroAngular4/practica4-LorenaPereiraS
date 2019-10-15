@@ -14,5 +14,6 @@ export class ViewerProjectComponent implements OnInit {
     this.projectId = activateRoute.snapshot.params['id'];
   }
 
+
   ngOnInit() {}
 }
