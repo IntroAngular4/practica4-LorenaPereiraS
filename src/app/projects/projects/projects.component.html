@@ -12,7 +12,12 @@
 <h2>List of projects</h2>
 <ul *ngIf="projects.length > 0; else empty">
   <li *ngFor="let project of projects">
-    <span>{{ project.id }} {{ project.name }}</span>
+    <span>Project ID: {{ project.id }} </span> <br>
+    <span>Name: {{ project.name }}</span>
+    <br>
+    <a routerLink="viewerproject/{{ project.id }}"
+       class="button"> Viewer</a>
   </li>
 </ul>
+
 <ng-template #empty> <i>No projects</i> </ng-template>

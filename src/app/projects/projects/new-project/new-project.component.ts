@@ -20,6 +20,7 @@ export class NewProjectComponent implements OnInit {
     };
   }
   public newProject() {
+    this.project.id = this.projects.length;
     this.projects.push({ ...this.project });
     environment.projects = this.projects;
   }
