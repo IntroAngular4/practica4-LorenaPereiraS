@@ -1,16 +1,4 @@
-<p>{{ title | uppercase }}</p>
-<form>
-  <fieldset>
-    <legend>Project Form</legend>
-    <section>
-      <label for="name">Name</label>
-      <input name="name"
-             type="text"
-             [(ngModel)]="project.name"
-             placeholder="Project name" />
-    </section>
-  </fieldset>
-  <input value="New Project"
-         type="submit"
-         (click)="newProject()" />
-</form>
+<app-new-project-form [project]="project"
+                      [projects]='projects'
+                      [title]="title"
+                      (newProject)="newProject($event)"></app-new-project-form>

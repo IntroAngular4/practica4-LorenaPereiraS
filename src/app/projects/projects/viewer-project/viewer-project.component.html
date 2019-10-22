@@ -1,5 +1,2 @@
-<p>Current Project ID: {{projectId}}</p>
-<div *ngFor="let project of projects">
-  <p *ngIf="project.id + ''  == projectId">
-    Name project: {{ project.name }} </p>
-</div>
+<app-viewer-project-form [project]="project"
+                         [projects]="projects"></app-viewer-project-form>
