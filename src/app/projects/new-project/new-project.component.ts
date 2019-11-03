@@ -4,12 +4,15 @@ import { Project } from '../../models/project.model';
 import { ProjectsService } from '../../services/projects.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-new-project',
+  templateUrl: './new-project.component.html',
+  styleUrls: ['./new-project.component.css']
 })
-export class HomeComponent implements OnInit {
+export class NewProjectComponent implements OnInit {
+  public title = 'New Project';
   proyectos$: Observable<Project[]>;
+  project: Project = { name: '' };
+
   constructor(private projectService: ProjectsService) {}
 
   ngOnInit() {
@@ -20,7 +23,9 @@ export class HomeComponent implements OnInit {
     this.proyectos$ = this.projectService.getProjects();
   }
 
-  deleteMyRates() {
-    this.projectService.deleteMyRates();
+  public newProject(event: string, id: number) {
+    this.project.id = id;
+    this.project.name = event;
+    this.projectService.postProject(this.project);
   }
 }

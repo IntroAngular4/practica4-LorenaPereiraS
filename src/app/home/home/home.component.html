@@ -1,5 +1,6 @@
-<div>
-  <h1>
-    Show Number of projects: {{ projects.length}}
-  </h1>
+<div *ngIf="proyectos$ | async as projects">
+  <app-dashboard [projectsLength]="projects.length"></app-dashboard>
 </div>
+<input value="Delete Rates"
+       type="button"
+       (click)="deleteMyRates()" />

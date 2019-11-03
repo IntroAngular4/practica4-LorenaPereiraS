@@ -1,0 +1,7 @@
+<div *ngIf="proyecto$ | async as proyecto">
+  <ng-container *ngFor="let project of proyecto">
+    <ng-container *ngIf="project.id===projectId">
+      <app-viewer-project-form [project]="project"></app-viewer-project-form>
+    </ng-container>
+  </ng-container>
+</div>

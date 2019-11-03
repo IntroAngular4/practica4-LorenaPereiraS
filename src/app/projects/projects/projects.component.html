@@ -1,1 +1,15 @@
-<app-project-list [projects]="projects"></app-project-list>
+<header class="sticky">
+  <!-- <a routerLink="viewer-project"
+     class="button"> Viewer Project</a> -->
+  <a routerLink="new-project"
+     class="button"> New Project </a>
+
+</header>
+
+<router-outlet></router-outlet>
+<div class="items-head">
+  <p>Proyectos disponibles</p>
+</div>
+<div *ngIf="proyectos$ | async as proyectos">
+  <app-project-list [projects]="proyectos"></app-project-list>
+</div>

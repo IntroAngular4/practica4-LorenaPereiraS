@@ -1,0 +1,9 @@
+<div *ngIf="proyectos$ | async as proyectos; else newFirstProject">
+
+  <app-new-project-form [title]="title"
+                        (newProject)="newProject($event,proyectos.length)"></app-new-project-form>
+</div>
+<ng-template #newFirstProject>
+  <app-new-project-form [title]="title"
+                        (newProject)="newProject($event,0)"></app-new-project-form>
+</ng-template>
