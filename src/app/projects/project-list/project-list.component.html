@@ -1,5 +1,7 @@
+<app-filter-projects-form (filtroBusquedaCambio)="aplicarFiltro($event)"></app-filter-projects-form>
+
 <ul *ngIf="projects.length > 0; else empty">
-  <li *ngFor="let project of projects">
+  <li *ngFor="let project of proyectosMostrados">
     <span>Project ID: {{ project.id }} </span> <br>
     <span>Name: {{ project.name }}</span>
     <br>

@@ -1,6 +1,7 @@
-<div class="container ">
-  <input ¡class='search-input'
+<div class="container search-box">
+  <input #projectSearchInput
+         (input)="cambioFiltro($event.target.value)"
          type="text"
-         placeholder="filter by name"
-         (input)="search($event.target.value)">
+         class="form-control"
+         placeholder="Filtrar por nombre">
 </div>

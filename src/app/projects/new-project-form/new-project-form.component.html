@@ -1,16 +1,18 @@
-<p>{{ title | uppercase }}</p>
-<form>
+<form [formGroup]="formProject">
+  <p>{{ title | uppercase }}</p>
+
   <fieldset>
     <legend>Project Form</legend>
     <section>
       <label for="name">Name</label>
-      <input name="name"
+      <input name="projectName"
              type="text"
-             [(ngModel)]="projectName"
+             formControlName="projectName"
              placeholder="Project name" />
     </section>
   </fieldset>
   <input value="New Project"
          type="submit"
-         (click)="newProjectEvent()" />
+         (click)="crearProyecto()"
+         [disabled]='!formProject.valid' />
 </form>

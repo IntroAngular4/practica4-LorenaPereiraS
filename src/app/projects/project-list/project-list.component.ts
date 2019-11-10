@@ -9,8 +9,18 @@ import { Project } from '../../models/project.model';
 export class ProjectListComponent implements OnInit {
   @Input()
   projects: Array<Project>;
+  proyectosMostrados: Project[];
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.proyectosMostrados = this.projects;
+  }
+
+  aplicarFiltro(texto: string) {
+    //ToLowerCase para que no distinga entre mayúsculas y minúsculas.
+    const textoLowerCase = texto.toLowerCase();
+
+    this.proyectosMostrados = this.projects.filter(p => p.name.toLowerCase().includes(textoLowerCase));
+  }
 }
