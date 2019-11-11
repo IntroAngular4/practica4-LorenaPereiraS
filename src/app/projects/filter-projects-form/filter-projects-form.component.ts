@@ -6,13 +6,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./filter-projects-form.component.css']
 })
 export class FilterProjectsFormComponent implements OnInit {
-  @Output() filtroBusquedaCambio = new EventEmitter<string>();
+  @Output()
+  searchFilterChange = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  cambioFiltro(textoBusqueda: string) {
-    this.filtroBusquedaCambio.emit(textoBusqueda);
+  changeFilter(searchProperty: string) {
+    this.searchFilterChange.emit(searchProperty);
   }
 }

@@ -1,6 +1,10 @@
-<div *ngIf="proyectos$ | async as projects">
+<div *ngIf="projects$ | async as projects">
   <app-dashboard [projectsLength]="projects.length"></app-dashboard>
 </div>
-<input value="Delete Rates"
+       <input value="Loas Projects"
        type="button"
-       (click)="deleteMyRates()" />
+       (click)="loadMyProjects()" />
+       <input value="Delete Projects"
+       type="button"
+       (click)="deleteMyProjects()" />
+

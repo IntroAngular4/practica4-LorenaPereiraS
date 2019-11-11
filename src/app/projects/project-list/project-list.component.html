@@ -1,4 +1,5 @@
-<app-filter-projects-form (filtroBusquedaCambio)="aplicarFiltro($event)"></app-filter-projects-form>
+<app-filter-projects-form (searchFilterChange)="aplicarFiltro($event)"></app-filter-projects-form>
+
 
 <ul *ngIf="projects.length > 0; else empty">
   <li *ngFor="let project of proyectosMostrados">
@@ -11,3 +12,4 @@
 </ul>
 
 <ng-template #empty> <i>No projects</i> </ng-template>
+

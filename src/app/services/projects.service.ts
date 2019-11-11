@@ -18,15 +18,10 @@ export class ProjectsService {
     return this.httpClient.get<any>(this.urlApi);
   }
 
-  getProject(projectId: number) {
-    const urlProject = this.urlApi + '/' + projectId;
-    return this.httpClient.get<any>(urlProject);
-  }
-
   postProject(project: Project) {
     return this.httpClient.post(this.urlApi, project).subscribe();
   }
-  public deleteMyRates() {
+  public deleteMyProject() {
     this.httpClient.delete(this.urlApi).subscribe();
   }
 }

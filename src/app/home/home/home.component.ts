@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { Project } from '../../models/project.model';
 import { ProjectsService } from '../../services/projects.service';
 
@@ -9,7 +10,7 @@ import { ProjectsService } from '../../services/projects.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  proyectos$: Observable<Project[]>;
+  projects$: Observable<Project[]>;
   constructor(private projectService: ProjectsService) {}
 
   ngOnInit() {
@@ -17,10 +18,13 @@ export class HomeComponent implements OnInit {
   }
 
   numProjects() {
-    this.proyectos$ = this.projectService.getProjects();
+    this.projects$ = this.projectService.getProjects();
   }
 
-  deleteMyRates() {
-    this.projectService.deleteMyRates();
+  deleteMyProjects() {
+    this.projectService.deleteMyProject();
+  }
+  loadMyProjects() {
+    environment.projects.forEach(project => this.projectService.postProject(project));
   }
 }
