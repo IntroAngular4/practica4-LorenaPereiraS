@@ -1,7 +1,7 @@
 <div *ngIf="projects$ | async as projects">
   <app-dashboard [projectsLength]="projects.length"></app-dashboard>
 </div>
-       <input value="Loas Projects"
+       <input value="Load Projects"
        type="button"
        (click)="loadMyProjects()" />
        <input value="Delete Projects"
